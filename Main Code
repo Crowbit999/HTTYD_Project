@@ -41,13 +41,13 @@ void setup() {
   // Attach servos and buttons for scene A -> E.
   servo1.attach(1);
   pinMode(buttonAPin, INPUT);
-  servo1.attach(2);
+  servo2.attach(2);
   pinMode(buttonBPin, INPUT);
-  servo1.attach(3);
+  servo3.attach(3);
   pinMode(buttonCPin, INPUT);
-  servo1.attach(4);
+  servo4.attach(4);
   pinMode(buttonDPin, INPUT);
-  servo1.attach(5);
+  servo5.attach(5);
   pinMode(buttonEPin, INPUT);
 
 }
