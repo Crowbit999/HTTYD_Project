@@ -58,7 +58,7 @@ void loop() {
     if (buttonAState != lastButtonAState) {
       if (buttonAState == HIGH) {
         A = true;
-        myservo.write(); //write degree of movement here.
+        servo1.write(); //write degree of movement here.
         delay(); //write speed of the movement here.
       }
     }
@@ -69,42 +69,42 @@ void loop() {
       if (buttonBState != lastButtonBState) {
         if (buttonBState == HIGH) {
           B = true;
-          myservo.write();
+          servo2.write();
           delay();
         }
       }
     }
 
 // SCENE 3C
-    if (A== true) {
-      buttonBState = digitalRead(buttonBPin);
-      if (buttonBState != lastButtonBState) {
-        if (buttonBState == HIGH) {
-          B = true;
-          myservo.write();
+    if (B== true) {
+      buttonCState = digitalRead(buttonCPin);
+      if (buttonCState != lastButtonCState) {
+        if (buttonCState == HIGH) {
+          C = true;
+          servo3.write();
           delay();
         }
       }
     }
 
 // SCENE 4D
-    if (A== true) {
-      buttonBState = digitalRead(buttonBPin);
-      if (buttonBState != lastButtonBState) {
-        if (buttonBState == HIGH) {
-          B = true;
-          myservo.write();
+    if (C== true) {
+      buttonDState = digitalRead(buttonDPin);
+      if (buttonDState != lastButtonDState) {
+        if (buttonDState == HIGH) {
+          D = true;
+          servo4.write();
           delay();
         }
       }
     }
 
 // SCENE 5E
-    if (A== true) {
-      buttonBState = digitalRead(buttonBPin);
-      if (buttonBState != lastButtonBState) {
-        if (buttonBState == HIGH) {
-          myservo.write();
+    if (D== true) {
+      buttonEState = digitalRead(buttonEPin);
+      if (buttonEState != lastButtonEState) {
+        if (buttonEState == HIGH) {
+          servo5.write();
           delay();
         }
       }
