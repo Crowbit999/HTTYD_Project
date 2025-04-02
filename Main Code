@@ -1,0 +1,112 @@
+// Import servo library.
+#include <Servo.h>
+
+// Set up variables for scenes A -> E.
+// Scene 1A.
+Servo servo1;
+const int buttonAPin = 8;
+int buttonAState = 0;
+int lastButtonAState = 0;
+bool A - false;
+
+// Scene 2B.
+Servo servo2;
+const int buttonBPin = 9;
+int buttonBState = 0;
+int lastButtonBState = 0;
+bool B - false;
+
+// Scene 3C.
+Servo servo3;
+const int buttonCPin = 10;
+int buttonCState = 0;
+int lastButtonCState = 0;
+bool C - false;
+
+// Scene 4D.
+Servo servo4;
+const int buttonDPin = 11;
+int buttonDState = 0;
+int lastButtonDState = 0;
+bool D - false;
+
+// Scene 5E.
+Servo servo5;
+const int buttonEPin = 12;
+int buttonEState = 0;
+int lastButtonEState = 0;
+bool E - false;
+
+void setup() {
+  // Attach servos and buttons for scene A -> E.
+  servo1.attach(1);
+  pinMode(buttonAPin, INPUT);
+  servo1.attach(2);
+  pinMode(buttonBPin, INPUT);
+  servo1.attach(3);
+  pinMode(buttonCPin, INPUT);
+  servo1.attach(4);
+  pinMode(buttonDPin, INPUT);
+  servo1.attach(5);
+  pinMode(buttonEPin, INPUT);
+
+}
+
+void loop() {
+// SCENE 1A
+  buttonAState = digitalRead(buttonAPin);
+    if (buttonAState != lastButtonAState) {
+      if (buttonAState == HIGH) {
+        A = true;
+        myservo.write(); //write degree of movement here.
+        delay(); //write speed of the movement here.
+      }
+    }
+
+// SCENE 2B
+    if (A== true) {
+      buttonBState = digitalRead(buttonBPin);
+      if (buttonBState != lastButtonBState) {
+        if (buttonBState == HIGH) {
+          B = true;
+          myservo.write();
+          delay();
+        }
+      }
+    }
+
+// SCENE 3C
+    if (A== true) {
+      buttonBState = digitalRead(buttonBPin);
+      if (buttonBState != lastButtonBState) {
+        if (buttonBState == HIGH) {
+          B = true;
+          myservo.write();
+          delay();
+        }
+      }
+    }
+
+// SCENE 4D
+    if (A== true) {
+      buttonBState = digitalRead(buttonBPin);
+      if (buttonBState != lastButtonBState) {
+        if (buttonBState == HIGH) {
+          B = true;
+          myservo.write();
+          delay();
+        }
+      }
+    }
+
+// SCENE 5E
+    if (A== true) {
+      buttonBState = digitalRead(buttonBPin);
+      if (buttonBState != lastButtonBState) {
+        if (buttonBState == HIGH) {
+          myservo.write();
+          delay();
+        }
+      }
+    }
+}
