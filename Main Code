@@ -7,38 +7,38 @@ Servo servo1;
 const int buttonAPin = 8;
 int buttonAState = 0;
 int lastButtonAState = 0;
-bool A - false;
+bool A = false;
 
 // Scene 2B.
 Servo servo2;
 const int buttonBPin = 9;
 int buttonBState = 0;
 int lastButtonBState = 0;
-bool B - false;
+bool B = false;
 
 // Scene 3C.
 Servo servo3;
 const int buttonCPin = 10;
 int buttonCState = 0;
 int lastButtonCState = 0;
-bool C - false;
+bool C = false;
 
 // Scene 4D.
 Servo servo4;
 const int buttonDPin = 11;
 int buttonDState = 0;
 int lastButtonDState = 0;
-bool D - false;
+bool D = false;
 
 // Scene 5E.
 Servo servo5;
 const int buttonEPin = 12;
 int buttonEState = 0;
 int lastButtonEState = 0;
-bool E - false;
+bool E = false;
 
 void setup() {
-  // Attach servos and buttons for scene A -> E.
+  // Attach servos and buttons for scenes A -> E.
   servo1.attach(1);
   pinMode(buttonAPin, INPUT);
   servo2.attach(2);
@@ -50,64 +50,71 @@ void setup() {
   servo5.attach(5);
   pinMode(buttonEPin, INPUT);
 
+  // Sets all servos to initial angle.
+  servo1.write(0);
+  servo2.write(0);
+  servo3.write(0);
+  servo4.write(0);
+  servo5.write(0);
+
 }
 
 void loop() {
-// SCENE 1A
+// SCENE 1A START
   buttonAState = digitalRead(buttonAPin);
     if (buttonAState != lastButtonAState) {
       if (buttonAState == HIGH) {
         A = true;
-        servo1.write(); //write degree of movement here.
-        delay(); //write speed of the movement here.
+        servo1.write(180); //write degree of movement here.
+        delay(15); //write speed of the movement here.
       }
     }
 
-// SCENE 2B
+// SCENE 2B START
     if (A== true) {
       buttonBState = digitalRead(buttonBPin);
       if (buttonBState != lastButtonBState) {
         if (buttonBState == HIGH) {
           B = true;
-          servo2.write();
-          delay();
+          servo2.write(180);
+          delay(15);
         }
       }
     }
 
-// SCENE 3C
+// SCENE 3C START
     if (B== true) {
       buttonCState = digitalRead(buttonCPin);
       if (buttonCState != lastButtonCState) {
         if (buttonCState == HIGH) {
           C = true;
-          servo3.write();
-          delay();
+          servo3.write(180);
+          delay(15);
         }
       }
     }
 
-// SCENE 4D
+// SCENE 4D START
     if (C== true) {
       buttonDState = digitalRead(buttonDPin);
       if (buttonDState != lastButtonDState) {
         if (buttonDState == HIGH) {
           D = true;
-          servo4.write();
-          delay();
+          servo4.write(180);
+          delay(15);
         }
       }
     }
 
-// SCENE 5E
+// SCENE 5E START
     if (D== true) {
       buttonEState = digitalRead(buttonEPin);
       if (buttonEState != lastButtonEState) {
         if (buttonEState == HIGH) {
-          servo5.write();
-          delay();
+          servo5.write(180);
+          delay(15);
         }
       }
     }
 }
-//test branch 
+// END.
