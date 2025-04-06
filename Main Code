@@ -65,8 +65,8 @@ void loop() {
     if (buttonAState != lastButtonAState) {
       if (buttonAState == HIGH) {
         A = true;
-        servo1.write(180); //write degree of movement here.
-        delay(15); //write speed of the movement here.
+        servo1.write(60); 
+        delay(15); 
       }
     }
 
