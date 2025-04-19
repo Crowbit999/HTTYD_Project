@@ -55,7 +55,7 @@ void setup() {
   servo2.write(0);
   servo3.write(0);
   servo4.write(0);
-  servo5.write(0);
+  servo5.write(-40);
 
 }
 
@@ -66,7 +66,7 @@ void loop() {
       if (buttonAState == HIGH) {
         A = true;
         servo1.write(60); 
-        delay(15); 
+        delay(30); 
       }
     }
 
@@ -100,7 +100,7 @@ void loop() {
       if (buttonDState != lastButtonDState) {
         if (buttonDState == HIGH) {
           D = true;
-          servo4.write(180);
+          servo4.write(60);
           delay(15);
         }
       }
@@ -111,8 +111,16 @@ void loop() {
       buttonEState = digitalRead(buttonEPin);
       if (buttonEState != lastButtonEState) {
         if (buttonEState == HIGH) {
-          servo5.write(180);
-          delay(15);
+          servo5.write(50);
+          delay(5);
+          servo5.write(0);
+          delay(5);
+          servo5.write(50);
+          delay(5);
+          servo5.write(0);
+          delay(5);
+          servo5.write(50);
+          delay(5);
         }
       }
     }
